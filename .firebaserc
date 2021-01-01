@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "developerted": {
+      "hosting": {
+        "social-lite": [
+          "social-lite"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "developerted"
+  }
+}
