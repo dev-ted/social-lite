@@ -1,0 +1,117 @@
+.sidebar {
+    top: 80px;
+    position: sticky;
+    flex: 0.2;
+    border-radius: 10px;
+    text-align: center;
+    height: fit-content;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.sidebar-avatar {
+    margin-bottom: 10px;
+}
+
+.sidebar-top>h4 {
+    color: rgb(56, 56, 56);
+    font-size: 12px;
+}
+
+.sidebar-top>h2 {
+
+    font-size: 16px;
+}
+
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(255, 255, 255);
+    border-bottom: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: aliceblue;
+    padding-bottom: 10px;
+}
+
+.sidebar-top>img {
+    margin-bottom: -20px;
+    width: 100%;
+    height: 80px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+}
+
+.sidebar-stat {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar-stat>p {
+
+    font-size: 13px;
+    font-weight: 300;
+
+}
+
+.stats-number {
+    color: rgb(15, 161, 180);
+    font-weight: bold;
+
+}
+
+.sidebar-stats {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 1px solid aliceblue;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.sidebar-bottom {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid aliceblue;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.sidebar-bottom >p{
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+
+.sidebar-recentTopic {
+    display: flex;
+    font-size: 13px;
+    cursor: pointer;
+    padding:5px ;
+    margin: 5px;
+}
+
+.sidebar-recentTopic :hover {
+    background-color: whitesmoke;
+   
+    border-radius: 10px;
+    cursor: pointer;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.hashtag{
+    margin-left: 10px;
+    margin-right: 10px;
+}
