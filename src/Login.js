@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { login } from "./features/userSlice";
 import { auth } from "./firebase";
 import { useDispatch } from "react-redux";
-import { Modal, Button ,Form } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import "./Login.css";
@@ -75,7 +75,7 @@ function Login() {
        
         <input
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
           placeholder="Username"
           type="email"
           required
@@ -100,41 +100,48 @@ function Login() {
 
 
 
-      <Modal show={showModal} onHide={handleClose}>
+      <Modal className="modal" show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Create Account</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <Form>
-  <Form.Group controlId="formBasicEmail">
-    <Form.Label>Full Name</Form.Label>
-    <Form.Control  value={name}
-          onChange={(e) => setName(e.target.value)} type="text" placeholder="Enter Your name" />
-   
-  </Form.Group>
-  <Form.Group controlId="formBasicEmail">
-    <Form.Label>Username</Form.Label>
-    <Form.Control  value={email}
-          onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" />
-   
-  </Form.Group>
-  <Form.Group  controlId="formBasicEmail">
-    <Form.Label>Profile Image(Optional)</Form.Label>
-    <Form.Control value={photoUrl}
-          onChange={(e) => setPhotoUrl(e.target.value)} type="text" placeholder="eg . https://profile.png" />
-   
-  </Form.Group>
 
-  <Form.Group controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control value={password}
-          onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
-  </Form.Group>
- 
-  <Button variant="primary"  onClick={register}>
-    Create Account
-  </Button>
-</Form>
+<div className="login">
+<img
+        src="https://icon-library.com/images/chat-app-icon/chat-app-icon-7.jpg"
+        alt=""
+      />
+      
+      <form>
+      <input
+          value={name}
+          onChange={(e) => setName(e.target.value)} type="text" placeholder="Enter Your name"
+          required
+        />
+       
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Username"
+          type="email"
+          required
+        />
+        <input
+          value={photoUrl}
+          onChange={(e) => setPhotoUrl(e.target.value)} type="text" placeholder="eg . https://profile.png"
+        />
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          type="password"
+          required
+        />
+        <button type="submit" onClick={register}>
+          Sign Up
+        </button>
+      </form>
+</div>
           
         </Modal.Body>
        
