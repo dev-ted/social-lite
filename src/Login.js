@@ -137,7 +137,7 @@ function Login() {
           type="password"
           required
         />
-        <button type="submit" onClick={register}>
+        <button  onClick={register}>
           Sign Up
         </button>
       </form>
