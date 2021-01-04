@@ -32,9 +32,9 @@ function Header() {
       </div>
       <div className="header-right">
         <HeaderItems Icon={HomeIcon} title="Home" />
-        <HeaderItems Icon={PeopleIcon} title="Friends" />
-        <HeaderItems Icon={SendIcon} title="Messages" />
-        <HeaderItems Icon={NotificationsIcon} title="Notifications" />
+        <HeaderItems Icon={PeopleIcon} title="Friends"  />
+        <HeaderItems Icon={SendIcon} title="Messages"  />
+        <HeaderItems Icon={NotificationsIcon} title="Notifications"  />
         <HeaderItems
          avatar ={true}
           title="Sign Out"

@@ -1,0 +1,18 @@
+.comments{
+    display: flex;
+    height: 40px;
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.comments >h5{
+    padding: 10px;
+    font-size: 16px;
+}
+.comments > p{
+    padding: 10px;
+    margin-top: -3px;
+    font-size: 14px;
+}

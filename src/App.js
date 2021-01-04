@@ -1,70 +1,61 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { createContext, useEffect, useState, useContext } from "react";
 
 import "./App.css";
-import { login, logout, selectUser } from "./features/userSlice";
-import Feeds from "./Feeds";
-import { auth } from "./firebase";
-import Header from "./Header";
-import Login from "./Login";
-import Sidebar from "./Sidebar";
-import { useDispatch } from "react-redux";
-import Widgets from "./Widgets";
 
-function App() {
-  // pull user from data store
-  const user = useSelector(selectUser);
-  const dispatch = useDispatch();
 
-  //persist login which check auth changes
+import MobileView from "./MobileView";
+import DesktopView from "./DesktopView";
+
+// pull user from data store
+
+const viewportProvider = createContext({});
+
+const ViewportProvider = ({ children }) => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
+
+  const handlewindowResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  };
+
   useEffect(() => {
-    auth.onAuthStateChanged((userAuth) => {
-      if (userAuth) {
-
-        //user is logged in
-        dispatch(login({
-          email: userAuth.email,
-          uid: userAuth.uid,
-          displayName: userAuth.displayName,
-          photoURL: userAuth.photoURL,
-        }))
-      } else {
-        dispatch(logout());
-      }
-    });
-  }, [dispatch]);
+    window.addEventListener("resize", handlewindowResize);
+    return () => window.removeEventListener("resize", handlewindowResize);
+  }, []);
 
   return (
-    <div className="app">
-   
+    <viewportProvider.Provider value={{ width, height }}>
+      {children}
+    </viewportProvider.Provider>
+  );
+};
 
-      {/* check if theres a user */}
+const useViewport = () => {
+  const { width, height } = useContext(viewportProvider);
+  return { width, height };
+};
 
-      {!user ? (
-        <Login />
-      ) : (
-       
-        <div>
-<Header />
-<div className="app-body">
-          
-          {/* SIDEBAR */}
-          <Sidebar />
+const MobileComponent = () => {
+  return <div className="app">
+    <MobileView />
+  </div>;
+};
 
-          {/* NEWS FEED */}
-          <Feeds />
+const DesktopComponent = () => {
+  return <DesktopView />;
+};
 
-          {/* WIDGETS */}
-          <Widgets />
-        </div>
+const Component = () => {
+  const { width } = useViewport();
+  const breakpoint = 800;
+  return width < breakpoint ? <MobileComponent /> : <DesktopComponent />;
+};
 
-
-           </div>
-        
-        
-      )}
-    </div>
+export default function App() {
+  return (
+    <ViewportProvider>
+      <Component />
+    </ViewportProvider>
   );
 }
-
-export default App;

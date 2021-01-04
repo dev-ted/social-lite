@@ -27,7 +27,7 @@ function Widgets() {
      
       {newsArticle("New Puma RS ", "Trending")}
       {newsArticle("Covid19 Finished ", "Trending")}
-      {newsArticle("New Years ", "Trending")}
+      {newsArticle("New Years ", "hot")}
       {newsArticle("React JS too Lit ", "Trending")}
     </div>
     

@@ -15,6 +15,17 @@
 .headerItem-icon{
     object-fit: contain;
     height: 25px !important;
-    height: 25px !important;
+    
     width: 25px !important;
+}
+@media(max-width:800px){
+    .headerItem-title{
+        margin-left: 8px;
+    }
+    .headerItem-icon{
+        object-fit: contain;
+        height: 35px !important;
+       
+        width: 35px !important;
+    }
 }

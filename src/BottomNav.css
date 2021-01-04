@@ -1,0 +1,13 @@
+.bottom-nav{
+    position: sticky;
+ 
+    width: 100% !important;
+   
+    justify-content: space-evenly !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    margin-top: -15px !important;
+}
+.items{
+    display: flex;
+}

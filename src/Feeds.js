@@ -13,12 +13,14 @@ import { selectUser } from "./features/userSlice";
 import {useSelector} from 'react-redux'
 import FlipMove from 'react-flip-move';
 
+
 function Feeds() {
   // useState
   const [posts, setPosts] = useState([]);
   const [input, setInput] = useState("");
-
   const user = useSelector(selectUser);
+
+
 
   useEffect(() => {
     //connect to firebase db
@@ -30,9 +32,14 @@ function Feeds() {
             id: doc.id,
             data: doc.data(),
           }))
+          
         )
-      );
+        
+      ); 
+   
+      
   }, []);
+
 
   const postFeed = (e) => {
     e.preventDefault(); //prevent form from refreshing
@@ -40,13 +47,22 @@ function Feeds() {
       name: user.displayName,
       description: user.email,
       message: input,
+      uid:user.uid,
       imageUrl: user.photoURL,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(), //get time stamp from firebase
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      likes: 0,
+      shares: 0,
+      comments:0,
+      
+      
+      //get time stamp from firebase
     });
 
 
     setInput("");
   };
+
+ 
 
   return (
     <div className="feed">
@@ -64,8 +80,10 @@ function Feeds() {
             </button>
           </form>
         </div>
+        
         <div className="feed-input-options">
-          <InputOptions Icon={ImageIcon} title="Photo" color="#1cb0e6" />
+          
+          <InputOptions Icon={ImageIcon} title="Photo" color="#1cb0e6"  />
           <InputOptions
             Icon={MovieCreationIcon}
             title="Video"
@@ -78,13 +96,16 @@ function Feeds() {
       {/* posts */}
 <FlipMove>
 {posts.map(
-        ({ id, data: { name, description, message, imageUrl, timestamp } }) => (
+        ({ id, data: { name, description, message, imageUrl,likes,shares,comments, timestamp } }) => (
           <Posts
             key={id}
             name={name}
             description={description}
             message={message}
             imageUrl={imageUrl}
+            likes={likes}
+            comments ={comments}
+            shares ={shares}
           />
         )
       )}

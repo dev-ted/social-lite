@@ -29,6 +29,10 @@ const recentTopic = (item) =>(
       {/* stat section */}
       <div className="sidebar-stats">
         <div className="sidebar-stat">
+          <p>Friends</p>
+          <p className="stats-number">45</p>
+        </div>
+        <div className="sidebar-stat">
           <p>Posts</p>
           <p className="stats-number">9</p>
         </div>

@@ -2,23 +2,37 @@
 
 *{
   font-family: 'Poppins', sans-serif;
+ 
 }
 .app{
-  background-color: rgb(248, 245, 245);
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .app-body{
   display: flex;
-  margin-top: 35px;
+  margin-top: 25px;
   max-width: 1200px;
   margin-left: 20px;
   margin-right: 20px;
 
 }
+.nav{
+  position: sticky;
+  margin-bottom: 10px;
+  padding: 10px;
+  
+}
 @media(max-width:800px){
-  .app{
-    flex-direction: column;
-  }
+ .app{
+   overflow-x: hidden;
+  
+ }
+ .app-body{
+   overflow-y: scroll;
+   height: 600px;
+   margin-top:10px ;
+ }
+
 }

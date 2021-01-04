@@ -1,5 +1,5 @@
 .post{
-    background-color: white;
+    background-color: rgb(250, 250, 250);
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -29,3 +29,54 @@
     justify-content: space-evenly;
     font-size: 12px !important;
 }
+
+.commment-container{
+    background-color: white;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.post-input{
+    border: 1px solid aliceblue;
+    border-radius: 30px;
+    display: flex;
+    padding: 10px;
+    color: rgb(189, 188, 188);
+    padding-left: 15px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+.post-input > form{
+    display: flex;
+    width: 100%;
+}
+.post-input >form > input{
+    outline-width: 0;
+    border: none;
+    flex: 1;
+    font-weight: 500;
+}
+.post-input >form > button{
+    display: none;
+}
+.feed-reactions{
+    display: flex;
+    height: 15px;
+    justify-content: flex-end;
+    
+}
+.feedback >.left{
+    display: flex;
+    padding: 10px;
+    font-size: 10px;
+
+}
+.left > p{
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
