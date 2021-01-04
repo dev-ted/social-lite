@@ -10,9 +10,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CreateIcon from "@material-ui/icons/Create";
 import { db } from "./firebase";
 import CommentsSection from "./CommentsSection";
-import { selectUser } from "./features/userSlice";
-import { useSelector } from "react-redux";
-import firebase from "firebase";
+// import { selectUser } from "./features/userSlice";
+// import { useSelector } from "react-redux";
+// import firebase from "firebase";
 
 const Posts = forwardRef(
   ({ name, description, message, imageUrl, likes, shares, comments }, ref) => {
@@ -21,7 +21,7 @@ const Posts = forwardRef(
     const [comment, setComments] = useState([]);
    
 
-    const user = useSelector(selectUser);
+    // const user = useSelector(selectUser);
 
     const Show = () => setModal(true);
 
