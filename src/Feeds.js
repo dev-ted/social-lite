@@ -71,6 +71,7 @@ function Feeds() {
           <CreateIcon />
           <form >
             <input
+            required
               value={input}
               onChange={(e) => setInput(e.target.value)}
               type="text" placeholder="Post something"
