@@ -71,7 +71,7 @@ function Login() {
         alt=""
       />
       
-      <form>
+      <form onSubmit= {LoginApp}>
        
         <input
           value={email}
@@ -87,7 +87,7 @@ function Login() {
           type="password"
           required
         />
-        <button type="submit" onClick={LoginApp}>
+        <button type="submit" >
           Sign In
         </button>
       </form>
@@ -112,7 +112,7 @@ function Login() {
         alt=""
       />
       
-      <form>
+      <form onSubmit= {register}>
       <input
           value={name}
           onChange={(e) => setName(e.target.value)} type="text" placeholder="Enter Your name"
@@ -137,7 +137,7 @@ function Login() {
           type="password"
           required
         />
-        <button  onClick={register}>
+        <button type="submit" >
           Sign Up
         </button>
       </form>
