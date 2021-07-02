@@ -32,7 +32,8 @@ function Login() {
       );
     }).catch((error) => alert("username or password is invalid"))
   };
-  const register = () => {
+  const register = (e) => {
+    e.preventDefault();
     if (!name) {
       return alert("Please enter a full name");
     }
