@@ -32,7 +32,9 @@ function Login() {
       );
     }).catch((error) => alert("username or password is invalid"))
   };
-  const register = () => {
+  const register = (e) => {
+    e.preventDefault();
+    
     if (!name) {
       return alert("Please enter a full name");
     }
@@ -112,7 +114,7 @@ function Login() {
         alt=""
       />
       
-      <form >
+      <form onSubmit= {register}  >
       <input
           value={name}
           onChange={(e) => setName(e.target.value)} type="text" placeholder="Enter Your name"
@@ -137,7 +139,7 @@ function Login() {
           type="password"
           required
         />
-        <button type="submit" onClick={register} >
+       
         <button type="submit" >
           Sign Up
         </button>

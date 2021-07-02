@@ -49,7 +49,7 @@ function DesktopView() {
           <Router>
             <Header />
             <Switch>
-              <>
+              <div className="app-body">
                 <Route exact path="/">
                   <Sidebar />
                   <Feeds />
@@ -72,7 +72,7 @@ function DesktopView() {
                   <Profile />
                 </Route>
 
-              </>
+              </div>
             </Switch>
           </Router>
         </div>

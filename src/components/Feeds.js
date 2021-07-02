@@ -20,21 +20,7 @@ function Feeds() {
   const user = useSelector(selectUser);
 
   useEffect(() => {
-    // db.collection("posts")
-    //   .orderBy("timestamp", "desc")
-    //   .onSnapshot((snapshot) =>
-    //     setPosts(
-    //       snapshot.docs.map((doc) => ({
-    //         id: doc.id,
-    //         data: doc.data(),
-    //       }))
-
-    //     )
-
-    //   );
-
-    db.collection("userposts")
-      
+    db.collection("posts")
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) =>
         setPosts(
@@ -42,39 +28,28 @@ function Feeds() {
             id: doc.id,
             data: doc.data(),
           }))
+
         )
+
       );
+
+  
   }, []);
 
   const postFeed = (e) => {
     e.preventDefault(); //prevent form from refreshing
-    // db.collection("posts").add({
-    //   name: user.displayName,
-    //   description: user.email,
-    //   message: input,
-    //   uid:user.uid,
-    //   imageUrl: user.photoURL,
-    //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    //   likes: 0,
-    //   shares: 0,
-    //   comments:0,
 
-    //   //get time stamp from firebase
-    // });
-    db.collection("userposts")
-
-      .doc('posts')
-      .collection(user?.uid)
-      .add({
-        name: user.displayName,
-        description: user.email,
-        message: input,
-        uid: user.uid,
-        imageUrl: user.photoURL,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        likes: 0,
-        shares: 0,
-        comments: 0,
+  
+    db.collection("posts").add({
+      name: user.displayName,
+      description: user.email,
+      message: input,
+      uid:user.uid,
+      imageUrl: user.photoURL,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      likes: 0,
+      shares: 0,
+      comments:0,
 
         //get time stamp from firebase
       })
@@ -115,7 +90,7 @@ function Feeds() {
         </div>
       </div>
       {/* posts */}
-      {/* <FlipMove> */}
+      <FlipMove>
         {posts.map(
           ({
             id,
@@ -142,7 +117,7 @@ function Feeds() {
             />
           )
         )}
-      {/* </FlipMove> */}
+      </FlipMove>
     </div>
   );
 }
