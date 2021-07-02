@@ -71,7 +71,7 @@ function Login() {
         alt=""
       />
       
-      <form>
+      <form onSubmit= {LoginApp}>
        
         <input
           value={email}
@@ -87,7 +87,7 @@ function Login() {
           type="password"
           required
         />
-        <button type="submit" onClick={LoginApp}>
+        <button type="submit" >
           Sign In
         </button>
       </form>
@@ -138,6 +138,7 @@ function Login() {
           required
         />
         <button type="submit" onClick={register} >
+        <button type="submit" >
           Sign Up
         </button>
       </form>
