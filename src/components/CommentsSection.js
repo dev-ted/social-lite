@@ -1,6 +1,6 @@
 import { Avatar } from '@material-ui/core'
 import React from 'react'
-import './CommentsSection.css'
+import '../css/CommentsSection.css'
 
 function CommentsSection({imageUrl,name,comment}) {
     return (

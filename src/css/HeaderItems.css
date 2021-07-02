@@ -1,9 +1,15 @@
+*{
+    text-decoration:none;
+}
+
 .headerItem{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 20px;
+    margin-top: 8px;
     cursor: pointer;
+    text-decoration: none;
 }
 .headerItem :hover{
     color: rgb(34, 154, 224);

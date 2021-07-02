@@ -1,5 +1,5 @@
 import React ,{useState} from 'react'
-import './BottomNav.css'
+import '../css/BottomNav.css'
 
 
 
@@ -7,17 +7,20 @@ import HomeIcon from "@material-ui/icons/Home";
 import PeopleIcon from "@material-ui/icons/People";
 
 import SendIcon from "@material-ui/icons/Send";
-
+import { useHistory } from "react-router-dom";
 import { makeStyles , } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 
 import ExploreIcon from '@material-ui/icons/Explore';
-import PersonIcon from '@material-ui/icons/Person';
+// import PersonIcon from '@material-ui/icons/Person';
+
+
 
 
 
 function BottomNav() {
+  const history = useHistory()
     const useStyles = makeStyles({
         root: {
          width:400,
@@ -51,12 +54,13 @@ function BottomNav() {
    
     return (
         <div className="bottom-nav">
-         <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
-      <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />} />
-      <BottomNavigationAction label="Explore" value="explore" icon={<ExploreIcon />} />
-      <BottomNavigationAction label="Friends" value="friends" icon={<PeopleIcon />} />
-      <BottomNavigationAction label="Messages" value="messages" icon={<SendIcon />} />
-      <BottomNavigationAction label="Profile" value="profile" icon={<PersonIcon />} />
+         
+      <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
+      <BottomNavigationAction  label="Home" value="home" icon={<HomeIcon />} onClick ={() => history.push('/') } />
+      <BottomNavigationAction label="Explore" value="explore" icon={<ExploreIcon />  } onClick ={() => history.push('/explore')}/>
+      <BottomNavigationAction label="Friends" value="friends" icon={<PeopleIcon />} onClick ={() => history.push('/friends')} />
+      <BottomNavigationAction label="Messages" value="messages" icon={<SendIcon />} onClick ={() => history.push('/messages')} />
+      {/* <BottomNavigationAction label="Profile" value="profile" icon={<PersonIcon />} onClick ={() => history.push('/profile')} /> */}
     </BottomNavigation>
         </div>
     )

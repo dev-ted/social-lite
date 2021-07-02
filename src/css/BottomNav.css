@@ -1,5 +1,6 @@
 .bottom-nav{
-    position: sticky;
+    position: sticky !important;
+    z-index: 99 !important;
  
     width: 100% !important;
    

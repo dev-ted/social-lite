@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { login } from "./features/userSlice";
-import { auth } from "./firebase";
+import { login } from "../features/userSlice";
+import { auth } from "../firebase";
 import { useDispatch } from "react-redux";
 import { Modal } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import "./Login.css";
+import "../css/Login.css";
 
 function Login() {
   const [name, setName] = useState("");
@@ -112,7 +112,7 @@ function Login() {
         alt=""
       />
       
-      <form>
+      <form >
       <input
           value={name}
           onChange={(e) => setName(e.target.value)} type="text" placeholder="Enter Your name"
@@ -137,7 +137,7 @@ function Login() {
           type="password"
           required
         />
-        <button  onClick={register}>
+        <button type="submit" onClick={register} >
           Sign Up
         </button>
       </form>

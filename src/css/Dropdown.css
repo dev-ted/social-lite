@@ -1,0 +1,97 @@
+.dropdown{
+    margin-top: 10px;
+ 
+  
+}
+
+.icon{
+    width: 15px;
+    height: 15px;
+    background : rgb(15, 57, 82);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    font-size: 45px !important;
+    color: rgb(51, 206, 233);
+    cursor: pointer;
+    font-size: 35px !important;
+}
+
+.icon:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+.menu-items{
+    margin-top: 40px;
+}
+.menu__section{
+display: flex;
+flex-direction: column;
+
+
+    width : 210px;
+    height: 210px;
+     background : white;
+     
+}
+.section__icon{
+    font-size: 40px !important;
+}
+.profile ,.settings , .privacy ,.logout{
+  
+    display: flex;
+    align-items : center;
+    gap: 20px;
+    padding: 10px;
+    height: 50px;
+    border-bottom: grey;
+    cursor: pointer;
+    
+    
+}
+.link{
+    text-decoration: none;
+}
+.profile:hover{
+    background :rgb(15, 57, 82);
+    border-radius: 5px ;
+    -webkit-border-radius: 5px ;
+    -moz-border-radius: 5px ;
+    -ms-border-radius: 5px ;
+    -o-border-radius: 5px ;
+    color: white;
+
+}
+.settings:hover{
+    background :rgb(15, 57, 82);
+    border-radius: 5px ;
+    -webkit-border-radius: 5px ;
+    -moz-border-radius: 5px ;
+    -ms-border-radius: 5px ;
+    -o-border-radius: 5px ;
+    color: white;
+}
+.privacy:hover{
+    background :rgb(15, 57, 82);
+    border-radius: 5px ;
+    -webkit-border-radius: 5px ;
+    -moz-border-radius: 5px ;
+    -ms-border-radius: 5px ;
+    -o-border-radius: 5px ;
+    color: white;
+}
+.logout:hover{
+    background :rgb(15, 57, 82);
+    border-radius: 5px ;
+    -webkit-border-radius: 5px ;
+    -moz-border-radius: 5px ;
+    -ms-border-radius: 5px ;
+    -o-border-radius: 5px ;
+    color: white;
+}
+

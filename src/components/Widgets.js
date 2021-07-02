@@ -1,7 +1,7 @@
 import React from "react";
 import InfoIcon from "@material-ui/icons/Info";
 import TurnedInIcon from '@material-ui/icons/TurnedIn';
-import "./Widgets.css";
+import "../css/Widgets.css";
 
 function Widgets() {
   // create news article

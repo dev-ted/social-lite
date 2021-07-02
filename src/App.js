@@ -3,8 +3,8 @@ import React, { createContext, useEffect, useState, useContext } from "react";
 import "./App.css";
 
 
-import MobileView from "./MobileView";
-import DesktopView from "./DesktopView";
+import MobileView from "./views/MobileView";
+import DesktopView from "./views/DesktopView";
 
 // pull user from data store
 

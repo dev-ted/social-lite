@@ -13,26 +13,29 @@
 .app-body{
   display: flex;
   margin-top: 25px;
-  max-width: 1200px;
+  max-width: 1260px;
   margin-left: 20px;
   margin-right: 20px;
 
 }
-.nav{
+.mobile-nav{
   position: sticky;
   margin-bottom: 10px;
   padding: 10px;
+  z-index: 99;
   
 }
 @media(max-width:800px){
  .app{
    overflow-x: hidden;
+   width : 100vw;
   
  }
  .app-body{
    overflow-y: scroll;
    height: 600px;
    margin-top:10px ;
+   width: 100vw;
  }
 
 }

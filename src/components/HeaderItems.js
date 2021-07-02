@@ -1,8 +1,8 @@
 import React from "react";
-import "./HeaderItems.css";
+import "../css/HeaderItems.css";
 import {Avatar} from '@material-ui/core'
 import {  useSelector } from "react-redux";
-import { selectUser } from "./features/userSlice";
+import { selectUser } from "../features/userSlice";
 
 function HeaderItems({ avatar, Icon, title ,onClick }) {
   const user = useSelector(selectUser);

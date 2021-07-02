@@ -1,18 +1,21 @@
 import React from 'react'
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
-import { useDispatch  } from "react-redux";
-import { logout } from "./features/userSlice";
-import { auth } from "./firebase";
-import HeaderItems from './HeaderItems';
-import './MobileHeader.css'
+// import { useDispatch  } from "react-redux";
+// import { logout } from "../features/userSlice";
+// import { auth } from "../firebase";
+import {useHistory} from 'react-router-dom'
+import HeaderItems from '../components/HeaderItems';
+import '../css/MobileHeader.css'
 
 function MobileHeader() {
 
-    const dispatch = useDispatch();
-    const Logout = () => {
-      dispatch(logout());
-      auth.signOut();
-    };
+    // const dispatch = useDispatch();
+    const history = useHistory();
+    // const Logout = () => {
+    //   dispatch(logout());
+    //   auth.signOut();
+    // };
+    
     return (
         <div >
             <div className="headers">
@@ -29,8 +32,8 @@ function MobileHeader() {
         
         <HeaderItems
          avatar ={true}
-          title="Sign Out"
-          onClick={Logout}
+         
+          onClick={() => history.push('/profile')}
         />
       </div>
       </div>

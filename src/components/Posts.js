@@ -1,15 +1,15 @@
 import { Avatar } from "@material-ui/core";
 import React, { forwardRef, useState, useEffect } from "react";
-import InputOptions from "./InputOptions";
-import "./Posts.css";
+import InputOptions from "../components/InputOptions";
+import "../css/Posts.css";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import ShareIcon from "@material-ui/icons/Share";
 import ChatIcon from "@material-ui/icons/Chat";
 import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CreateIcon from "@material-ui/icons/Create";
-import { db } from "./firebase";
-import CommentsSection from "./CommentsSection";
+import { db } from "../firebase";
+import CommentsSection from "../components/CommentsSection";
 // import { selectUser } from "./features/userSlice";
 // import { useSelector } from "react-redux";
 // import firebase from "firebase";
@@ -19,7 +19,6 @@ const Posts = forwardRef(
     const [modal, setModal] = useState();
     const [input, setInput] = useState("");
     const [comment, setComments] = useState([]);
-   
 
     // const user = useSelector(selectUser);
 
@@ -35,32 +34,28 @@ const Posts = forwardRef(
     ///GET COMMENTS
 
     useEffect(() => {
-
       db.collection("comments")
-        
-        .onSnapshot((Snapshot) =>
-          setComments(
-            Snapshot.docs.map((doc) => ({
-              id: doc.id,
-              data: doc.data(),
-            }))
-          )
-        );
-
-        
+      .onSnapshot((Snapshot) =>
+        setComments(
+          Snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        )
+      );
     }, []);
 
     const postComment = (e) => {
       e.preventDefault();
 
       // db.collection("comments").doc().set({
-        
+
       //   name: user.displayName,
       //   content: input,
       //   imageUrl: user.photoURL,
       //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       // });
-      alert("feature coming soon")
+      alert("feature coming soon");
 
       setInput("");
     };
@@ -82,16 +77,13 @@ const Posts = forwardRef(
           <div className="feedback">
             <div className="left">
               <p>
-               
                 <ThumbUpAltIcon /> {likes}
               </p>
 
               <p>
-              
                 <ChatIcon /> {comments}
               </p>
               <p>
-               
                 <ShareIcon /> {shares}
               </p>
             </div>
@@ -119,18 +111,14 @@ const Posts = forwardRef(
         </div>
         {/* display comments */}
 
-        {comment.map(
-        ({ id, data: { name, content,imageUrl } }) => (
+        {comment.map(({ id, data: { name, content, imageUrl } }) => (
           <CommentsSection
             key={id}
-             imageUrl={imageUrl}
+            imageUrl={imageUrl}
             name={name}
-      
-            comment ={content}
-            
+            comment={content}
           />
-        )
-      )}
+        ))}
 
         <Modal
           size="sm"
